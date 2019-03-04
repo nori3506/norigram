@@ -1,0 +1,14 @@
+<%= form_for(:session, url: sessions_path)  do |f| %>
+  <div class="field">
+  <%= f.text_field :username, placeholder: "電話番号、ユーザーネーム、メールアドレス", required: true%>
+  </div>
+
+  <div class="field">
+  <%= f.password_field :password, placeholder: "パスワード", required: true%>
+  </div>
+
+  <div class="actions">
+  <%= f.submit "ログイン" %>
+  </div>
+
+<% end %>

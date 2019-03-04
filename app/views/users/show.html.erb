@@ -1,0 +1,5 @@
+<%= @user.username %>
+<%= link_to "プロフィールを編集", edit_user_path(@user) %>
+<div class="actions">
+<%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
+</div>

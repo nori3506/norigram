@@ -1,0 +1,55 @@
+<%= render 'shared/errors', obj: @user %>
+
+<%= link_to "パスワードを変更する", edit_password_path(@user) %>
+
+<%= @user.username %>
+<%= form_for @user do |f| %>
+
+<div class="field">
+<%= f.label :fullname %>
+<%= f.text_field :fullname %>
+</div>
+
+<div class="field">
+<%= f.label :username %>
+<%= f.text_field :username %>
+</div>
+
+<div class="field">
+<%= f.label :website %>
+<%= f.text_field :website %>
+</div>
+
+<div class="field">
+<%= f.label :introduction %>
+<%= f.text_field :introduction %>
+</div>
+
+<br>
+<%= "非公開情報" %>
+<br>
+
+<div class="field">
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+
+<div class="field">
+<%= f.label :tel %>
+<%= f.text_field :tel %>
+</div>
+
+<div class="field">
+<%= f.label :gender %>
+<%= f.text_field :gender %>
+</div>
+
+<div class="actions">
+<%= f.submit "送信する" %>
+</div>
+
+<% end %>
+
+<div class="actions">
+<%= link_to "アカウントを消す", user_path(@user), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+</div>

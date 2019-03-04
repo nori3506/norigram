@@ -1,0 +1,28 @@
+<%= render 'shared/errors', obj: @user %>
+<%= "Norigram" %>
+
+<%= form_for @user do |f| %>
+
+<div class="field">
+<%= f.text_field :email, placeholder: "メールアドレス"%>
+</div>
+
+<div class="field">
+<%= f.text_field :fullname, placeholder: "フルネーム"%>
+</div>
+
+<div class="field">
+<%= f.text_field :username, placeholder: "ユーザーネーム"%>
+</div>
+
+<div class="field">
+<%= f.password_field :password, placeholder: "パスワード"%>
+</div>
+
+<div class="actions">
+<%= f.submit "登録する" %>
+</div>
+
+"アカウントをお持ちですか？"<%= link_to "ログインする", new_session_path %>
+
+<% end %>
