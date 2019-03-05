@@ -5,6 +5,13 @@
 <%= @user.username %>
 <%= form_for @user do |f| %>
 
+<% if @user.image?%>
+<%= image_tag @user.image_url, size: 50 %>
+<% else %>
+<%= image_tag("usersmall.png", size: 50) %>
+<% end %>
+<%= f.file_field :image, title:"プロフィール写真を変更する", accept: 'image/jpeg,image/png'%>
+
 <div class="field">
 <%= f.label :fullname %>
 <%= f.text_field :fullname %>

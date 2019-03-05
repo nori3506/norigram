@@ -1,5 +1,20 @@
+<% if @user.image?%>
+ <%= image_tag @user.image_url, size: 160 %>
+<% else %>
+ <%= image_tag("userbig.png", size: 160) %>
+<% end %>
 <%= @user.username %>
 <%= link_to "プロフィールを編集", edit_user_path(@user) %>
+
+<li>投稿<%= @user.pictures.count %>件</li>
+
+<li><%= @user.fullname %></li>
+<li><%= @user.introduction %></li>
+
+
+<%= @pictures.each do |picture| %>
+ <li><%= image_tag picture.name_url, size: 268 %></li>
+<% end %>
 <div class="actions">
 <%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
 </div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only:[:new, :create, :destroy]
   resources :password_changes, only:[:edit, :update], as: 'password'
-  # get '/password_change/edit', to: 'password_changes/edit', as: 'password'
+  resources :pictures, only:[:new, :create, :show, :destroy]
 
 
 end

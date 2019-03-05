@@ -1,0 +1,4 @@
+<ul>
+  <li><%= link_to @picture.user.username, user_path(@picture.user) %></li>
+  <li><%= image_tag @picture.name_url, size: 500 %></li>
+</ul>
