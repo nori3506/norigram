@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :pictures
   mount_uploader :image, AvatarUploader
   serialize :image, JSON
+  has_many :comments
 end

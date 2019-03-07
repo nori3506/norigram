@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only:[:new, :create, :destroy]
   resources :password_changes, only:[:edit, :update], as: 'password'
   resources :pictures, only:[:new, :create, :show, :destroy]
+  resources :comments, only:[:new, :create, :index, :destroy]
 
 
 end
