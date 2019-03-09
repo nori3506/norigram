@@ -12,8 +12,12 @@
 <li><%= @user.introduction %></li>
 
 
-<%= @pictures.each do |picture| %>
- <li><%= image_tag picture.name_url, size: 268 %></li>
+<% @pictures.each do |picture| %>
+ <li>
+  <%= link_to picture_path(picture) do %>
+  <%= image_tag picture.name_url, size: 268 %>
+  <% end %>
+ </li>
 <% end %>
 <div class="actions">
 <%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>

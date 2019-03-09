@@ -11,7 +11,15 @@ class SessionsController < ApplicationController
     user1 = User.find_by(email: parameter)
     user2 = User.find_by(tel: parameter)
     if (user && user.authenticate(params[:session][:password])) || (user1 && user1.authenticate(params[:session][:password])) || (user2 && user2.authenticate(params[:session][:password]))
-      log_in (user1 || user || user2)
+      if !user1.nil?
+        log_in user1
+      end  
+      if !user.nil?
+        log_in user
+      end
+      if !user2.nil?
+        log_in user2
+      end
       current_user
       flash[:success] = "Log In Successfully!"
       redirect_to root_path

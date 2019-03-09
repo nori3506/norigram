@@ -60,3 +60,7 @@
 <div class="actions">
 <%= link_to "アカウントを消す", user_path(@user), method: :delete, data: {confirm: "本当に削除しますか？"} %>
 </div>
+
+<div class="actions">
+<%= link_to "ログアウト", session_path(@user), method: :delete %>
+</div>

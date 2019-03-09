@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :loggedin?, only:[:edit, :create, :update, :destroy]
-  
-  def index
-  end
+  # before_action :login_check, except:[:new]
   
   def create
     @user=User.new(user_params)

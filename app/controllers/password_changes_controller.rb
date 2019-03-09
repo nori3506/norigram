@@ -1,6 +1,8 @@
 class PasswordChangesController < UsersController
   
   before_action :present_password_check, only:[:update]
+  before_action :login_check, only:[:edit,:update]
+
   
   def edit
     @user = User.find_by(id: params[:id])
