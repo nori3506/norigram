@@ -1,24 +1,39 @@
-<% if @user.image?%>
- <%= image_tag @user.image_url, size: 160 %>
-<% else %>
- <%= image_tag("userbig.png", size: 160) %>
-<% end %>
-<%= @user.username %>
-<%= link_to "プロフィールを編集", edit_user_path(@user) %>
-
-<li>投稿<%= @user.pictures.count %>件</li>
-
-<li><%= @user.fullname %></li>
-<li><%= @user.introduction %></li>
-
-
-<% @pictures.each do |picture| %>
- <li>
-  <%= link_to picture_path(picture) do %>
-  <%= image_tag picture.name_url, size: 268 %>
-  <% end %>
- </li>
-<% end %>
-<div class="actions">
-<%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
+<div class="container">
+  <div align="center">
+    <div class="main_area centerlize">
+      <div class="user-image">
+        <% if @user.image?%>
+         <%= image_tag @user.image_url, size: 160 %>
+        <% else %>
+         <%= image_tag("userbig.png", size: 160) %>
+        <% end %>
+      </div>
+      <div class="user-info">
+       <div class="user-top under-space">
+        <div class="user-name"><%= @user.username %></div>
+        <div class="edit-link"><%= link_to "プロフィールを編集", edit_user_path(@user) %></div>
+       </div>
+       <div class="user-middle">
+        投稿<%= @user.pictures.count %>件</li>
+       </div>
+       <ul class="user-last">
+        <li><%= @user.fullname %></li>
+        <li><%= @user.introduction %></li>
+        <li><%= link_to @user.website, @user.website %></li>
+       </ul>
+      </div>
+    </div>
+    <div class="picture-index">
+      <% @pictures.each do |picture| %>
+       <div class="each-picture">
+         <%= link_to picture_path(picture) do %>
+         <%= image_tag picture.name_url, size: 300 %>
+         <% end %>
+       </div>
+      <% end %>
+    </div>
+    <div class="form under-space">
+      <%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
+    </div>
+  </div>
 </div>

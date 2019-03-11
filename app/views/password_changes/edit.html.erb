@@ -1,11 +1,15 @@
 <%= render 'shared/errors', obj: @user %>
-
-<%= form_for(@user, url: password_path(@user))  do |f| %>
-      <%= f.password_field :present_password, class: "form-control", placeholder:"現在のパスワード", required: true%>
-      <%= f.password_field :password, class: "form-control", placeholder:"新しいパスワード", required: true%>
-      <%= f.password_field :password_confirmation, class: "form-control", placeholder:"新しいパスワード（確認）", required: true %>
-
-  <div class="actions">
-    <%= f.submit "送信する" %>
+<div class="container">
+  <div align="center">
+    <%= form_for(@user, url: password_path(@user))  do |f| %>
+      <%= f.password_field :present_password, class: "field block", placeholder:"現在のパスワード", required: true%>
+      <%= f.password_field :password, class: "field block", placeholder:"新しいパスワード", required: true%>
+      <%= f.password_field :password_confirmation, class: "field block", placeholder:"新しいパスワード（確認）", required: true %>
+      <div class="actions">
+        <%= f.submit "送信する",class: "field under-space" %>
+      </div>
+    <% end %>
+    <%= link_to "戻る", edit_user_path(@user) %>
+    
   </div>
-<% end %>
+</div>

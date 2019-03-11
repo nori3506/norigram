@@ -1,28 +1,25 @@
 <% if loggedin? %>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li>
-            <%= link_to new_picture_path do %>
-              <%= image_tag "pic1.jpeg" %>  
-              <%= image_tag "postphoto.png" %>
-              <%= image_tag "pic2.jpeg" %>
-            <% end %>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+          <div class="footer">
+            <div class="picture-link picture-color">
+              <%= link_to new_picture_path do %>
+                <%= image_tag "pic1.jpeg" %>  
+                <%= image_tag "postphoto.png" %>
+                <%= image_tag "pic2.jpeg" %>
+              <% end %>
+            </div>
+          </div>
+    </div>
   </nav>
 <% else %>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><%= link_to "利用規約", root_path  %></li>
-          <li>©️Norigram</li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <nav class="navbar navbar-default center">
+      <div class="container-fluid">
+          <div class="footer">
+            <div class="terms"><%= link_to "利用規約", root_path  %></div>
+            <div class="copyright">©️Norigram</div>
+          </div>
+        </div>
+      </div>
+    </nav>
 <% end %>

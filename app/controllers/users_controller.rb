@@ -40,6 +40,8 @@ class UsersController < ApplicationController
   
   def destroy
     @user = User.find(params[:id])
+    @user.comments.delete_all
+    @user.pictures.delete_all
     if @user.delete
       redirect_to root_path
     else

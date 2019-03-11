@@ -7,6 +7,13 @@
   
 }
 
+.center{
+  margin:0 auto;
+}
+.container{
+  width:100%;
+}
+
 html, body {
 	font-size: 16px;
 	font-family: sans-serif;
@@ -79,6 +86,10 @@ td{
   font-size: 1.5rem;
 }
 
+///////////////////alert
+.alert{
+  text-align: center;
+}
 
 
 // form
@@ -89,4 +100,161 @@ td{
     color: red;
     margin: 0 0 30px 0;
   }
+}
+
+/////////////////////////////////user/new////////
+.main_area{
+  display:flex;
+  flex-direction: row;
+  margin:5vw 10vw;
+}
+
+.form-field{
+  margin:11vh 0;
+}
+
+.login-button{
+  color:blue;
+}
+
+.under-little-space{
+  margin-bottom:2vh;
+}
+//////////header
+
+.header-list{
+  display:flex;
+  justify-content: center;
+  margin:3vh 0;
+  div{
+    margin:0 5vw;
+  }
+}
+
+.header{
+  
+}
+
+.user-edit-link{
+  padding:3vh 0;
+}
+
+
+//////////footer
+
+.footer{
+  display:flex;
+  justify-content: center;
+  margin:3vh 0;
+  div{
+    margin:0 5vw;
+  }
+}
+
+
+
+////////////session/new
+.field{
+  margin-top: 3vh;
+}
+
+////////////user/show
+.picture-index{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+}
+
+.user-image{
+  margin-right: 5vw;
+}
+
+.user-top{
+  display:flex;
+  
+}
+.user-middle{
+  text-align:left;
+}
+.user-last{
+  li{
+    text-align:left;
+  }
+}
+.user-name{
+  font-size:2rem;
+}
+.edit-link{
+  margin-top:2.3vh;
+  padding-top:3px;
+  margin-left:5vw;
+  border:solid 1px black;
+  
+}
+
+.centerlize{
+  justify-content:center;
+}
+
+//////////////user/edit
+.edit-group{
+  display:flex;
+  justify-content: center;
+}
+.edit-factor{
+  margin: 5vh 6vw;
+  border: solid 1px black;
+}
+.space{
+  margin: 3vh 0;
+  padding-right:3vw;
+}
+
+.user-flex{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  
+}
+
+.edit-factor{
+  display:inline-black;
+  padding: 3px;
+}
+.flex-edit{
+  justify-content:center;
+  margin-top:4rem;
+}
+
+.under-space{
+  margin-bottom:5vh;
+}
+
+
+
+//////////password_changes/edit
+.block{
+  display:block;
+}
+
+//////////pictures/new
+.space-top-left{
+ margin-top:4vh;
+ margin-left:8vw;
+}
+
+///////////pictures/show
+.user-flow{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+
+  
+}
+.username{
+  font-size:1.2rem;
+}
+
+.space-top{
+  margin-top:3vh;
 }
