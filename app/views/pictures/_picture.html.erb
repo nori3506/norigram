@@ -9,7 +9,7 @@
       <%= link_to picture.user.username, user_path(picture.user),class:"username" %>
     </div>
     <li><%= link_to picture_path(picture) do %>
-      <%= image_tag picture.name_url, size: 300 %>
+      <%= image_tag picture.name_url, size: 600 %>
     <% end %></li>
     <%= render picture.comments %>
     <%= render 'comments/comment_form' %>

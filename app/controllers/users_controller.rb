@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   # before_action :login_check, except:[:new]
   before_action :logged_in_user, only: [:edit, :update, :destroy,
                                         :following, :followers]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
@@ -86,5 +87,6 @@ private
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
   end
+  
   
 end

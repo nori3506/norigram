@@ -1,7 +1,6 @@
 class PicturesController < ApplicationController
   before_action :login_check
 
-  
   def new
     @picture = Picture.new
   end

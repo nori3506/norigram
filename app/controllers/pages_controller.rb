@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  
+  before_action :login_check
   def home 
     @picture  = current_user.pictures.build
     @feed_items = current_user.feed.paginate(page: params[:page])
