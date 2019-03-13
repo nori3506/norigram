@@ -1,6 +1,6 @@
 class PasswordChangesController < UsersController
   before_action :login_check, only:[:edit,:update]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
   before_action :present_password_check, only:[:update]
   
 

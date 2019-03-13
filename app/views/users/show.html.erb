@@ -40,7 +40,9 @@
       </div>
     <div class="form under-space">
       <%= link_to "戻る", root_path %>
+      <% if current_user == @user %>
       <%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
+      <% end %>
     </div>
   </div>
 </div>
