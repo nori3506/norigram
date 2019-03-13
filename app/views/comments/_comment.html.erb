@@ -1,0 +1,7 @@
+<li>
+  <span class="font-weight-heavy"><%= link_to comment.user.username, user_path(comment.user) %></span>
+  <span class="font-weight-heavy"><%= comment.content %></span> 
+  <span class="font-size-small"><%= time_ago_in_words(comment.created_at) %> ago.</span>
+  <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" } %>
+</li>
+  

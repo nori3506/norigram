@@ -1,0 +1,17 @@
+<div class="container">
+  <div align="center"> 
+    <div class="user-flow space-top">
+      <% if picture.user.image?%>
+        <%= image_tag picture.user.image_url, size: 30, class:"image-display" %>
+      <% else %>
+        <%= image_tag("usersmall.png", size: 30) %>
+      <% end %>
+      <%= link_to picture.user.username, user_path(picture.user),class:"username" %>
+    </div>
+    <li><%= link_to picture_path(picture) do %>
+      <%= image_tag picture.name_url, size: 300 %>
+    <% end %></li>
+    <%= render picture.comments %>
+    <%= render 'comments/comment_form' %>
+  </div>
+</div>

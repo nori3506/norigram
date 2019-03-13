@@ -48,6 +48,13 @@ td{
   overflow-wrap : break-word;
 }
 
+.font-weight-heavy{
+  font-size:1rem;
+  font-weight: 600;
+}
+.font-size-small{
+  font-size:0.5rem;
+}
 .navbar{
   margin-bottom:0;
 }
@@ -159,11 +166,82 @@ td{
 }
 
 ////////////user/show
-.picture-index{
-  width:100%;
+.flexbox{
   display:flex;
-  flex-direction:row;
+  flex-flow:row;
+  padding:0 4vw;
+  justify-content:space-around;
+  -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
+.img{
+  max-width: 100%;
+  width: 300px;
+height: 300px;
+  
+}
+.each-picture{
+  padding: 1vh;
+  margin: 2vw;
+}
+@media ( max-width : 1207px ){
+.img{
+  max-width: 100%;
+  width: 250px;
+  height: 250px;
+  
+}
+}
+@media ( max-width : 1044px ){
+.img{
+  max-width: 100%;
+  width: 200px;
+  height: 200px;
+}
+}
+@media ( max-width : 776px ){
+.img{
+  max-width: 100%;
+  width: 150px;
+  height: 150px;
+}
+}
+
+@media ( max-width : 588px ){
+.img{
+  max-width: 100%;
+  width: 110px;
+  height: 110px;
+}
+}
+
+@media ( max-width : 438px ){
+.img{
+  max-width: 100%;
+  width: 80px;
+  height: 80px;
+}
+}
+@media ( max-width : 321px ){
+.img{
+  max-width: 100%;
+  width: 300px;
+  height: 300px;
+}
+flexbox{
+  display:flex;
+  padding:column;
+  -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+}
+
+
+// .picture-index{
+//   width:100%;
+//   display:flex;
+//   flex-direction:row;
+// }
 
 .user-image{
   margin-right: 5vw;
@@ -175,6 +253,8 @@ td{
 }
 .user-middle{
   text-align:left;
+  display:flex;
+  justify-content:space-between;
 }
 .user-last{
   li{
@@ -189,6 +269,12 @@ td{
   padding-top:3px;
   margin-left:5vw;
   border:solid 1px black;
+}
+
+.follow-link{
+  margin-top:2.3vh;
+  padding-top:3px;
+  margin-left:5vw;
   
 }
 

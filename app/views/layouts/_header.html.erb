@@ -13,7 +13,8 @@
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
-        <div class="user-edit-link"><%= link_to "Edit User info", user_path(current_user)%></div>
+        <div class="user-edit-link"><%= link_to "#{@current_user.username}", user_path(current_user)%></div>
+        <div class="user-edit-link"><%= link_to "User List", users_path%></div>
       </div>
 </nav>
 <% end %>
