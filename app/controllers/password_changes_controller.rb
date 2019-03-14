@@ -3,8 +3,6 @@ class PasswordChangesController < UsersController
   before_action :correct_user, only: [:edit, :update]
   before_action :present_password_check, only:[:update]
   
-
-  
   def edit
     @user = User.find_by(id: params[:id])
   end
@@ -17,7 +15,6 @@ class PasswordChangesController < UsersController
     else
       render 'edit'
     end
-  
   end
   
 private

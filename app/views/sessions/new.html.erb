@@ -4,15 +4,13 @@
       <%= image_tag "norigrambig.png" %>
       <%= form_for(:session, url: sessions_path)  do |f| %>
         <div class="field">
-        <%= f.text_field :username, placeholder: "電話番号、ユーザーネーム、メールアドレス", required: true,:size=>"35"%>
+          <%= f.text_field :username, placeholder: "電話番号、ユーザーネーム、メールアドレス", required: true,:size=>"35"%>
         </div>
-      
         <div class="field">
-        <%= f.password_field :password, placeholder: "パスワード", required: true,:size=>"35"%>
+          <%= f.password_field :password, placeholder: "パスワード", required: true,:size=>"35"%>
         </div>
-      
         <div class="field">
-        <%= f.submit "ログイン" %>
+          <%= f.submit "ログイン" %>
         </div>
       <% end %>
       <div class="field">

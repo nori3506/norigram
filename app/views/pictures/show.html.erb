@@ -2,12 +2,12 @@
   <div align="center">
     <ul>
       <div class="user-flow space-top">
-      <% if @picture.user.image?%>
-        <%= image_tag @picture.user.image_url, size: 30, class:"image-display" %>
-      <% else %>
-        <%= image_tag("usersmall.png", size: 30) %>
-      <% end %>
-      <%= link_to @picture.user.username, user_path(@picture.user),class:"username" %>
+        <% if @picture.user.image?%>
+          <%= image_tag @picture.user.image_url, size: 30, class:"image-display" %>
+        <% else %>
+          <%= image_tag("usersmall.png", size: 30) %>
+        <% end %>
+        <%= link_to @picture.user.username, user_path(@picture.user),class:"username" %>
       </div>
       <li><%= image_tag @picture.name_url, size: 350 %></li>
     </ul>
@@ -16,7 +16,6 @@
         <%= comment.user.username %>    <%= comment.content%>
         <%= link_to "delete", comment, method: :delete,data: { confirm: "You sure?" } %>
       </li>
-      
     <% end %>
     <ul>
       <%= form_for(@comment, url:comments_path) do |f| %>

@@ -6,7 +6,6 @@ class PicturesController < ApplicationController
   end
   
   def create 
-    
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
       flash[:success]="New picture was uploaded successfully!"
@@ -17,14 +16,11 @@ class PicturesController < ApplicationController
   def show
     @picture = Picture.find(params[:id])
     @comment = Comment.new
-    
-    
   end
   
-  def destroy
-  end
   
 private 
+
   def picture_params
     params.require(:picture).permit(:name)
   end

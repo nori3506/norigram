@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :login_check, except:[:new]
-  before_action :logged_in_user, only: [:edit, :update, :destroy,
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :following, :followers]
   before_action :correct_user, only: [:edit, :update, :destroy]
   
@@ -27,7 +26,6 @@ class UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
-
   end
   
   def show
@@ -76,11 +74,10 @@ private
   end
   
   def logged_in_user
-      unless loggedin?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
+    unless loggedin?
+      store_location
+      flash[:danger] = "Please log in."
+      redirect_to new_session_url
+    end
   end
-  
 end

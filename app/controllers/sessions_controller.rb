@@ -10,7 +10,9 @@ class SessionsController < ApplicationController
     user = User.find_by(username: parameter)
     user1 = User.find_by(email: parameter)
     user2 = User.find_by(tel: parameter)
-    if (user && user.authenticate(params[:session][:password])) || (user1 && user1.authenticate(params[:session][:password])) || (user2 && user2.authenticate(params[:session][:password]))
+    if (user && user.authenticate(params[:session][:password])) || 
+      (user1 && user1.authenticate(params[:session][:password])) ||
+      (user2 && user2.authenticate(params[:session][:password]))
       if !user1.nil?
         log_in user1
       end  
@@ -36,6 +38,7 @@ class SessionsController < ApplicationController
   end
   
 private
+
   def username_user?(params)
     user = params
     user.nil?
@@ -47,5 +50,4 @@ private
       render 'new'
     end
   end
-  
 end

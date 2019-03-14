@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :login_check
-  before_action :correct_user,   only: :destroy
+  before_action :correct_user, only: :destroy
 
   def create
     @picture = Picture.find_by(id:params[:comment][:picture_id])
@@ -27,6 +27,7 @@ private
   
   def correct_user
       @comment = current_user.comments.find_by(id: params[:id])
+      flash[:danger]="自分のコメント以外は削除することができません"
       redirect_to root_url if @comment.nil?
   end
 

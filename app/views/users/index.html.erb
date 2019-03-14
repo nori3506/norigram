@@ -5,11 +5,11 @@
         <% @users.each do |user| %>
           <li>
             <% if user.image?%>
-            <%= image_tag user.image_url, size: 30, class:"image-display" %>
-          <% else %>
-            <%= image_tag("usersmall.png", size: 30) %>
-          <% end %>
-          <%= link_to user.username, user_path(user),class:"username" %>
+              <%= image_tag user.image_url, size: 30, class:"image-display" %>
+            <% else %>
+              <%= image_tag("usersmall.png", size: 30) %>
+            <% end %>
+            <%= link_to user.username, user_path(user),class:"username" %>
           </li>
         <% end %>
       </ul>
