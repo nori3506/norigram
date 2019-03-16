@@ -1,3 +1,4 @@
+<% provide(:title, "New Account") %>
 <%= render 'shared/errors', obj: @user %>
 <div class="container">
   <div align="center">
@@ -19,6 +20,11 @@
           </div>
           <div class="field">
             <%= f.password_field :password, placeholder: "パスワード"%>
+          </div>
+          <div class="field">
+            <%= link_to "利用規約", users_term_path,:target => "_blank", class: "blue-color" %> 
+            <%= f.label :term, "同意する" %>
+            <%= f.check_box :term %>
           </div>
           <div class="actions">
             <%= f.submit "登録する", class:"field under-space" %>

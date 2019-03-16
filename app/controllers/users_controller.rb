@@ -9,12 +9,15 @@ class UsersController < ApplicationController
   
   def create
     @user=User.new(user_params)
-    if @user.save
+    if @user.term === true && @user.save
       log_in(@user)
       flash[:success] = "New User was crated! Welcome to NoriGram"
       redirect_to @user
+    elsif @user.term === false
+      flash[:danger]= "利用規約に同意が必要です"
+      render 'new'
     else
-      flash[:danger] = "Failed!"
+      flash[:danger] = "Failed! Please make sure you filled all fields"
       render 'new'
     end
   end
@@ -54,23 +57,26 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "フォローしているユーザー"
+    @title = "Following"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "フォロワー"
+    @title = "Follower"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
   
+  def term
+  end
+  
 private
 
   def user_params
-    params.require(:user).permit(:email, :fullname, :username, :password,:website, :introduction, :tel, :gender, :image)
+    params.require(:user).permit(:email, :fullname, :username, :password,:website, :introduction, :tel, :gender, :image, :term)
   end
   
   def logged_in_user

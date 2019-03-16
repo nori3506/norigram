@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   
   def login_check
     if !loggedin?
-    flash[:danger] ="please login"
-    redirect_to root_path
+      flash[:danger] ="please login"
+      redirect_to root_path
     end
   end
   
@@ -20,5 +20,4 @@ class ApplicationController < ActionController::Base
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
   end
-  
 end

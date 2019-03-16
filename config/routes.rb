@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root 'users#new'
   get 'pages/home', to: 'pages#home'
+  get 'users/term', to: 'users#term'
   
   resources :users
   resources :sessions, only:[:new, :create, :destroy]
