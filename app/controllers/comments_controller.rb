@@ -27,7 +27,9 @@ private
   
   def correct_user
     @comment = current_user.comments.find_by(id: params[:id])
-    flash[:danger]="自分のコメント以外は削除することができません"
-    redirect_to root_url if @comment.nil?
+    if @comment.nil?
+      flash[:danger]="自分のコメント以外は削除することができません"
+      redirect_to root_url
+    end
   end
 end

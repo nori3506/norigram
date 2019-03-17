@@ -15,7 +15,9 @@
     <% @picture.comments.each do |comment| %>
       <li>
         <%= comment.user.username %>    <%= comment.content%>
-        <%= link_to "delete", comment, method: :delete,data: { confirm: "You sure?" } %>
+        <% if current_user == comment.user %>
+          <%= link_to "delete", comment, method: :delete,data: { confirm: "You sure?" } %>
+        <% end %>
       </li>
     <% end %>
     <ul>
