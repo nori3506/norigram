@@ -18,7 +18,6 @@ class PicturesController < ApplicationController
     @comment = Comment.new
   end
   
-  
 private 
 
   def picture_params

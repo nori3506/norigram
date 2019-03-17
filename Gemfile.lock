@@ -317,6 +317,14 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
       spoon (~> 0.0)
+    pry-byebug (3.4.3)
+      byebug (>= 9.0, < 9.1)
+      pry (~> 0.10)
+    pry-doc (1.0.0)
+      pry (~> 0.11)
+      yard (~> 0.9.11)
+    pry-rails (0.3.9)
+      pry (>= 0.10.4)
     puma (3.9.1)
     puma (3.9.1-java)
     rack (2.0.6)
@@ -445,6 +453,7 @@ GEM
     will_paginate (3.1.6)
     xml-simple (1.1.5)
     xmlrpc (0.3.0)
+    yard (0.9.18)
 
 PLATFORMS
   java
@@ -471,6 +480,9 @@ DEPENDENCIES
   minitest (= 5.10.3)
   minitest-reporters (= 1.1.14)
   pg (= 0.20.0)
+  pry-byebug
+  pry-doc
+  pry-rails
   puma (= 3.9.1)
   rails (= 5.1.6)
   rails-controller-testing (= 1.0.2)
