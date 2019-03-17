@@ -1,0 +1,74 @@
+<% provide(:title, "Edit your profile") %>
+<%= render 'shared/errors', obj: @user %>
+<div class="container">
+  <div align="center">
+    <div class="edit-group">
+      <div class="edit-factor">
+        <%= link_to "パスワード変更", edit_password_path(@user) %>
+      </div>
+      <div class="edit-factor">
+        <%= link_to "アカウント削除", user_path(@user), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+      </div>
+      <div class="edit-factor">
+        <%= link_to "戻る", user_path(@user) %>
+      </div>
+      <div class="edit-factor">
+        <%= link_to "ログアウト", session_path(@user), method: :delete %>
+      </div>
+    </div>
+    <%= form_for @user do |f| %>
+      <div class="user-flex">
+        <div class="flex-edit">
+          <% if @user.image?%>
+            <%= image_tag @user.image_url, size: 50 %>
+          <% else %>
+            <%= image_tag("usersmall.png", size: 50) %>
+          <% end %>
+        </div>
+        <div class="user-flex-right">
+          <div class="user-name space">
+            <%= @user.username %>
+          </div>
+          <div class="edit-picture">
+            <%= f.file_field :image, title:"プロフィール写真を変更する", accept: 'image/jpeg,image/png'%>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :fullname %>
+        <%= f.text_field :fullname %>
+      </div>
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
+      <div class="field">
+        <%= f.label :website %>
+        <%= f.text_field :website %>
+      </div>
+      <div class="field">
+        <%= f.label :introduction %>
+        <%= f.text_field :introduction %>
+      </div>
+      <br>
+      <%= "非公開情報" %>
+      <br>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :tel %>
+        <%= f.text_field :tel %>
+      </div>
+      <div class="field">
+        <%= f.label :gender %>
+        <%= f.text_field :gender %>
+      </div>
+      <div class="field under-space">
+        <%= f.submit "送信する" %>
+      </div>
+    <% end %>
+    <%= link_to "戻る", user_path(@user) %>
+  </div>
+</div>  

@@ -1,0 +1,32 @@
+<% provide(:title, "Uploaded Picture") %>
+<div class="container">
+  <div align="center">
+    <ul>
+      <div class="user-flow space-top">
+        <% if @picture.user.image?%>
+          <%= image_tag @picture.user.image_url, size: 30, class:"image-display" %>
+        <% else %>
+          <%= image_tag("usersmall.png", size: 30) %>
+        <% end %>
+        <%= link_to @picture.user.username, user_path(@picture.user),class:"username" %>
+      </div>
+      <li><%= image_tag @picture.name_url, size: 350 %></li>
+    </ul>
+    <% @picture.comments.each do |comment| %>
+      <li>
+        <%= comment.user.username %>    <%= comment.content%>
+        <% if current_user == comment.user %>
+          <%= link_to "delete", comment, method: :delete,data: { confirm: "You sure?" } %>
+        <% end %>
+      </li>
+    <% end %>
+    <ul>
+      <%= form_for(@comment, url:comments_path) do |f| %>
+        <%= f.text_field :content, placeholder:"コメントを追加..." %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :picture_id, value: @picture.id %>
+        <%= f.submit "投稿する", class:"under-space" %>
+      <% end %>
+    </ul>
+  </div>
+</div>

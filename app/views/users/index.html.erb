@@ -1,0 +1,20 @@
+<% provide(:title, "Users") %>
+<div class="container">
+  <div align="center">
+    <%= will_paginate %>
+      <ul class="users">
+        <% @users.each do |user| %>
+          <li>
+            <% if user.image?%>
+              <%= image_tag user.image_url, size: 30, class:"image-display" %>
+            <% else %>
+              <%= image_tag("usersmall.png", size: 30) %>
+            <% end %>
+            <%= link_to user.username, user_path(user),class:"username" %>
+          </li>
+        <% end %>
+      </ul>
+    <%= will_paginate %>
+    <%= link_to "戻る", root_path, class:"space-top under-space" %>
+  </div>
+</div>

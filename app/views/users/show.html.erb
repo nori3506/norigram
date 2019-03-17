@@ -1,0 +1,55 @@
+<% provide(:title, @user.username) %>
+<div class="container">
+  <div align="center">
+    <div class="main_area centerlize">
+      <div class="user-image">
+        <% if @user.image?%>
+          <%= image_tag @user.image_url, size: 160 %>
+        <% else %>
+          <%= image_tag("userbig.png", size: 160) %>
+        <% end %>
+      </div>
+      <div class="user-info">
+        <div class="user-top under-space">
+          <div class="user-name">
+            <%= @user.username %>
+          </div>
+          <% if current_user?(@user) %>
+            <div class="edit-link">
+              <%= link_to "プロフィールを編集", edit_user_path(@user) %>
+            </div>
+          <% else %>
+            <%= render 'follow_form' if loggedin? %>
+          <% end %>
+        </div>
+        <div class="user-middle">
+          <div class="post">
+            投稿<%= @user.pictures.count %>件
+          </div>
+          <%= link_to "フォロワー #{@user.followers.count}人", followers_user_path(@user), class:"link" %>
+          <%= link_to "#{@user.following.count}人をフォロー中", following_user_path(@user), class:"link"%>
+        </div>
+        <ul class="user-last">
+          <li><%= @user.fullname %></li>
+          <li><%= @user.introduction %></li>
+          <li><%= link_to "#{@user.website}", @user.website %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="flexbox">
+      <% @pictures.each do |picture| %>
+        <div class="each-picture">
+          <%= link_to picture_path(picture) do %>
+            <%= image_tag picture.name_url, class:"img"%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="form under-space">
+      <%= link_to "戻る", root_path %>
+      <% if current_user == @user %>
+        <%= link_to "ログアウトする", session_path(@user), method: :delete, data: {confirm: "ログアウトしますか？"} %>
+      <% end %>
+    </div>
+  </div>
+</div>

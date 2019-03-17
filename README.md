@@ -1,24 +1,35 @@
-# README
+This is my instagram clone site named Norigram.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+functions below were implemented.
 
-Things you may want to cover:
+1.Login utilizing username,tel and email,Logout
+2.Password change
+3.Picture uploaded
+4.comment
+5.follow unfollow
 
-* Ruby version
+苦労した点
+・仕事の関係で限られた時間での制作にはなったものの、平日は深夜２時までコンスタントに
+  時間をとった。
+・幾多のエラーをきちんとハンドリングし、ローカル、herokuともにうまく動作させた。
+  エラーのパターンがつかめてきたので、あたりをつけて解決できるようになってきている。
+・電話番号、アドレス、usernameの３つでログインできるようにしたのはわりと思考を凝らした。
+　コード自体は汚いかもしれないが、イメージしたものを体現できた。
+・
 
-* System dependencies
+学んだ点
+・制作物を作る際に1日の終わりにgit commit1することが多かったが、
+  機能ができるたびに、画面ができるたびにぐらいのきめ細かさで
+  commitしていくと実践に近いのではないか。
+・今作っている画面で、一体どの情報を保持できているのか（user, pictureなど）
+  をきちんと追いかけていかないと目的の機能をつくるのは難しい。
+・アソシエーションがきちんと図示できればあとは手を動かすだけ。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+相談したい点
+・提出期限いっぱいで断念しましたが、pages/homeに画像とコメントを表示させていますが、
+　その画面でコメントを加えようとすると、最初に保存した画像にコメントが加わってしまいます。
+　find_byの取り方に問題があると踏み、debugして修正しよう格闘したができませんでした。
+　アドバイスいただきたいです。
+・惰性で書いた部分が割と多く散見されると思うのですが、可読性の高い綺麗なコードを書くうえで
+  どういったトレーニングを普段積むべきかご教示いただけたらと思います。
+  

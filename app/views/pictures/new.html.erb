@@ -1,0 +1,10 @@
+<% provide(:title, "Picture Upload") %>
+<div class="container">
+  <div align="center">
+    <%= form_for(@picture) do |f| %>
+      <%= f.file_field :name, accept: 'image/jpeg,image/png,image/jpg', class: "space-top-left" %>
+      <%= hidden_field_tag :user_id, current_user.id %>
+      <%= f.submit "アップロード",class: "field under-space" %>
+    <% end %>
+  </div>
+</div>
